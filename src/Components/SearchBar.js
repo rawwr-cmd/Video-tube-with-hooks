@@ -1,41 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
-class SearchBar extends React.Component {
-  //we don't call the function for eventlistner(e) but pass the reference to call at any instance of time in future
-  //we can call the handleInputChange directly too
+const SearchBar = ({ onFormSubmition }) => {
+  const [term, setTerm] = useState("");
 
-  //   handleInputChange(e) {
-  //     console.log(e.target.value);
-  //   }
-
-  state = { term: "" };
-
-  onInputChange = (event) => {
-    this.setState({ term: event.target.value });
-  };
-
-  onFormSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
-
-    this.props.onFormSubmition(this.state.term);
+    onFormSubmition(term);
   };
 
-  render() {
-    return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <label>Video Search</label>
-            <input
-              type="text"
-              value={this.state.term}
-              onChange={this.onInputChange}
-            />
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="ui segment">
+      <form onSubmit={onFormSubmit} className="ui form">
+        <div className="field">
+          <label>Video Search</label>
+          <input
+            type="text"
+            value={term}
+            onChange={(event) => {
+              setTerm(event.target.value);
+            }}
+          />
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default SearchBar;
