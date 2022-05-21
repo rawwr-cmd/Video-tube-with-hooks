@@ -1,4 +1,4 @@
-# Checkout the adfree yt
+# Checkout the adfree yt(mobile-responsiveness not added)
 
 ## using vercel
 
