@@ -1,6 +1,12 @@
 # Checkout the adfree yt
 
-[add-freeYt](https://video-search-with-hooks.vercel.app)
+## using vercel
+
+[ads-freeYt](https://video-search-with-hooks.vercel.app)
+
+## using netlify
+
+[adsFreeYt](https://frolicking-torte-68acb0.netlify.app)
 
 # Getting Started with Create React App
 
