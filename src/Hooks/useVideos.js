@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Youtube from "../API/Youtube";
 
 const useVideos = (defaultSearchTerm) => {
@@ -8,7 +8,6 @@ const useVideos = (defaultSearchTerm) => {
     search(defaultSearchTerm);
   }, []);
 
-  setSelectedVideo(response.data.items[0]);
   const search = async (term) => {
     const response = await Youtube.get("/search", {
       params: {
